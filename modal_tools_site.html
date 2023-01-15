@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clickable Boxes</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: #202123;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .box:hover {
+      cursor: pointer;
+      box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .label {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    body {
+      background-color: #444654;
+    }
+
+    .header-bar {
+      background-color: #202123;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-text {
+      color: #c2cbc6;
+      margin: 0;
+    }
+
+    .container {
+      padding-top: 30px;
+    }
+
+    .image-thumbnail-container {
+      position: absolute;
+      top: 40px;
+      left: 50px;
+      width: 150px;
+      height: 150px;
+
+      display: flex; /* set the container div to be a flex container */
+      align-items: center; /* align items vertically in the center */
+      justify-content: center; /* align items horizontally in the center */
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block; /* remove extra space below image */
+        /* transform: translate(-50%,-50%); */
+    }
+
+    .qr-code-gen-img {
+      padding-top: 20px;
+    }
+
+    /* .modal-header {
+      background-color: #202123;
+    }
+
+    .modal-body {
+      background-color: #444654;
+    }
+
+    .modal-footer {
+      background-color: #202123;
+    }
+
+    .modal-title {
+      color: #c2cbc6;
+      margin: 0;
+    } */
+
+    /* Modal styling */
+    /* #modal1 .modal-content {
+      background-color: #F5F5F5;
+      color: #333;
+    }
+
+    #modal1 .modal-header {
+      background-color: #333;
+      color: #F5F5F5;
+    }
+
+    #modal1 .modal-header button {
+      color: #F5F5F5;
+    }
+
+    #modal1 .modal-body {
+      background-color: #F5F5F5;
+    }
+
+    #modal1 .modal-body input {
+      background-color: #F5F5F5;
+      color: #333;
+      border: 1px solid #333;
+    }
+
+    #modal1 .modal-body #qr-code-img-container img {
+      background-color: #F5F5F5;
+    }
+
+    #modal1 .modal-footer {
+      background-color: #333;
+      color: #F5F5F5;
+    }
+
+    #modal1 .modal-footer .btn-primary {
+      background-color: #F5F5F5;
+      color: #333;
+      border: 1px solid #333;
+    } */
+
+
+  </style>
+
+  <script src =
+      "https://code.jquery.com/jquery-3.5.1.js">
+  </script>
+  <script>
+      function htmlEncode(value) {
+        return $('<div/>').text(value).html();
+      }
+
+      $(function () {
+        $('#generate-btn').click(function () {
+            let finalURL = 'https://chart.googleapis.com/chart?cht=qr&chl=' +
+            htmlEncode($('#url-input').val()) +
+            '&chs=160x160&chld=L|0'
+            $('.qr-code-gen-img').attr('src', finalURL);
+        });
+      });
+  </script>
+
+</head>
+
+<body>
+
+  <div class="header-bar">
+    <h1 class="header-text">Shall We Tools !</h1>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="box" data-toggle="modal" data-target="#modal1">
+
+          <div class="image-thumbnail-container">
+            <img src="https://img.freepik.com/premium-vector/qr-code-icon-qr-code-sample-icon-abstract-style-white-background-qr-code-scanner-blac-scan-code-business-illustration-bar-code-icon-line-symbol-modern-vector-illustration-eps-10_564974-442.jpg?w=740"
+            class="img-thumbnail img-responsive" alt="Sample QR">
+          </div>
+
+          <div class="label">QR Generator</div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="box" data-toggle="modal" data-target="#modal2">
+          <div class="label">Box 2</div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="box" data-toggle="modal" data-target="#modal3">
+          <div class="label">Box 3</div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="box" data-toggle="modal" data-target="#modal4">
+          <div class="label">Box 4</div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="box" data-toggle="modal" data-target="#modal5">
+          <div class="label">Box 5</div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="box" data-toggle="modal" data-target="#modal6">
+          <div class="label">Box 6</div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="box" data-toggle="modal" data-target="#modal7">
+          <div class="label">Box 7</div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="box" data-toggle="modal" data-target="#modal8">
+          <div class="label">Box 8</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="modal1" class="modal fade" role="dialog">
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Box 1</h4>
+        </div>
+
+        <div class="modal-body">
+          <input type="text" id="url-input" placeholder="Enter URL Eg:https://www.google.com/" style="width: 500px;">
+
+          <div id="qr-code-img-container">
+            <img src="" class="qr-code-gen-img img-responsive">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id = "generate-btn">Generate</button>
+          <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div id="modal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Box 2</h4>
+      </div>
+
+      <div class="modal-body">
+        <p>Modal content for Box 2</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <div id="modal3" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Box 3</h4>
+      </div>
+
+      <div class="modal-body">
+        <p>Modal content for Box 3</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <div id="modal4" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Box 4</h4>
+    </div>
+
+    <div class="modal-body">
+      <p>Modal content for Box 4</p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+  <div id="modal5" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Box 5</h4>
+    </div>
+
+    <div class="modal-body">
+      <p>Modal content for Box 5</p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+  <div id="modal6" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Box 6</h4>
+    </div>
+
+    <div class="modal-body">
+      <p>Modal content for Box 6</p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+  <div id="modal7" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Box 7</h4>
+    </div>
+
+    <div class="modal-body">
+      <p>Modal content for Box 7</p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+  <div id="modal8" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Box 8</h4>
+        </div>
+
+        <div class="modal-body">
+          <p>Modal content for Box 8</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="modal9" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Box 9</h4>
+        </div>
+
+        <div class="modal-body">
+          <p>Modal content for Box 9</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal10" class="modal fade" role="dialog">
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Box 10</h4>
+        </div>
+
+        <div class="modal-body">
+          <p>Modal content for Box 10</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
